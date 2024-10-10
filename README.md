@@ -62,16 +62,16 @@ We are going to need to enter our BIOS. If you have never done this, it may seem
 This will restart the PC and boot up to a very different menu.
 
 ### Enable these options in BIOS:
-- Look under the menu item **CPU configuration**
+1. Look under the menu item **CPU configuration**
   - **AMD-V** (enable this)	
   - **NX (No Execute)** (enable this)
-- Also, while we are in BIOS
+2. Also, while we are in BIOS
   - Choose **power limit select**
   - Increase this from **15W (balanced)** to **35W (performance)**
   - Choose **UMA frame buffer size**
     - Change this from **1G** to **> Auto**
-- Now click **Save & Exit**
-- Allow the PC to reboot
+3. Now click **Save & Exit**
+4. Allow the PC to reboot
 
 This is where the HWmonitor program we downloaded earlier will come in handy. Using this lightweight program, we can monitor the PC statistics to make sure they remain in safe parameters (especially the temperatures, since we increased the power delivery to the system).
 

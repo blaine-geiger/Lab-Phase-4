@@ -63,13 +63,13 @@ This will restart the PC and boot up to a very different menu.
 
 ### Enable these options in BIOS:
 1. Look under the menu item **CPU configuration**
-  - **AMD-V** (enable this)	
-  - **NX (No Execute)** (enable this)
+     - AMD-V (enable this)	
+     - NX (No Execute)** (enable this)
 2. Also, while we are in BIOS
-  - Choose **power limit select**
-  - Increase this from **15W (balanced)** to **35W (performance)**
-  - Choose **UMA frame buffer size**
-    - Change this from **1G** to **> Auto**
+     - Choose **power limit select**
+     - Increase this from **15W (balanced)** to **35W (performance)**
+     - Choose **UMA frame buffer size**
+      - Change this from **1G** to **> Auto**
 3. Now click **Save & Exit**
 4. Allow the PC to reboot
 

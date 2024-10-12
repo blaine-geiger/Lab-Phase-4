@@ -95,3 +95,55 @@ At this point, we should be able to run a virtual environment in VMware because 
 1. Install VMware from your download.
 2. Accept the EULA.
 3. No license key should be required for the free version.
+
+# Setting Up Virtual Machines in VMware
+
+Now we can download some virtual machines to install in our new lab.
+
+1. Go to [Kali Linux Download Page](https://www.kali.org/get-kali/#kali-virtual-machines)
+   - Find the VMware download link.
+   - Click this link to download and unzip the file (7-zip).
+2. Go to [Metasploitable Download Page](https://information.rapid7.com/metasploitable-download.html).
+3. Or [Metasploitable on SourceForge](https://sourceforge.net/projects/metasploitable/)
+   - Downloading from sourceforge.net doesn’t require you to register.
+4. Go to [OWASP BWA Files on SourceForge](https://sourceforge.net/projects/owaspbwa/files/).
+5. Or [OWASP BWA on GitHub](https://github.com/chuckfw/owaspbwa)
+   - Download version 1.2 (last version 08/2015).
+6. Create a folder wherever you like, such as `Documents > Virtual Machines`.
+7. Create a folder for each machine inside the Virtual Machines folder, like so:
+- Documents
+   - Virtual Machines
+      - Kali
+      - Metaspoitable
+      - OWASP
+
+9. Move each unzipped machine file from downloads into its designated folder. Keep backups of the zipped versions for now in case you make a mistake and need to recreate the VM.
+
+## Installing the VMs Inside the Virtualization Environment
+
+There are many ways to perform this task. In this document, we will cover a simple method and discuss the configuration details.
+
+1. Open the VMware application.
+2. Click `File > Open` in VMware.
+3. Point to the folder for the VM you are opening (e.g., Kali, OWASP, etc.).
+4. Options for machine configuration will have default suggestions and max allowances. Different machines will have different requirements. You should research the internet for this information and assign resources to the VM accordingly. Take Kali for example:
+1. **Memory (RAM)** – 2G suggested; I assign 4G for better performance.
+2. **Processors** – 2 processors and 2 cores per processor (total 4).
+3. **Hard Disk** – This is the amount of storage your VM will allocate for itself. I have chosen 80G. If you plan to have large files (wordlists for password cracking), you will need to assign enough storage space.
+
+### Network Adapters Basics and What They Mean:
+
+- **Bridged**: The VM connects directly to the physical network and gets an IP from the actual DHCP server on the network, not the virtual DHCP server inside VMware. The VM appears as an additional computer on the same physical network as the host system.
+- **NAT**: The VM shares the host IP and MAC of the host system (your PC) and is behind a virtual router. The VM can access the internet but is not accessible from outside the network. It is on a separate private network from the host and gets its IP from VMware’s DHCP server.
+- **Host-only**: The VM is isolated and can only communicate with the host and other VMs on the same network. This creates a VPN between the host and VM that is not visible outside of the host system. This is the most secure option for running purposefully vulnerable machines.
+
+There is much more detail to these settings and other possible settings as well. Please visit [VMware Documentation](https://docs.vmware.com/en/VMware-Workstation-Player-for-Windows/17.0/com.vmware.player.win.using.doc/GUID-C82DCB68-2EFA-460A-A765-37225883337D.html) to read more and do other research before you attempt setting up these machines.
+
+We are using host-only adapters for the 3 machines we have previously mentioned. Except the Kali machine will also have an additional NAT network adapter in VMware so that it can access the internet to receive updates and packages. This internet access can be turned on/off in the VM so that it can be isolated for security and only connected to the internet when necessary.
+
+1. **USB Interface**: This can be changed based on the type of USB ports and devices you may connect to the host that can also be used within the VM (2.0, 3.0, etc.).
+2. **Sound Card**: Can be left as Auto Detect.
+3. **Display**: Can be left as Auto Detect.
+
+Clicking OK will now create the VM. We will not cover the internal environments of the VMs themselves in this documentation.
+

@@ -1,4 +1,4 @@
-# Preparing a Compatible Virtualization Environment
+# Lab Phase 5: Ensure virtualization capability and install virtual machines
 
 ## Research and Determine Ideal Virtualization Environment
 

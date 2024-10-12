@@ -134,10 +134,11 @@ There are many ways to perform this task. In this document, we will cover a simp
 ### Network Adapters Basics and What They Mean:
 
 - **Bridged**: The VM connects directly to the physical network and gets an IP from the actual DHCP server on the network, not the virtual DHCP server inside VMware. The VM appears as an additional computer on the same physical network as the host system.
+   - **DO NOT** run a vulnerable VM in bridged mode or expose one to the internet. It can be targeted by attackers.
 - **NAT**: The VM shares the host IP and MAC of the host system (your PC) and is behind a virtual router. The VM can access the internet but is not accessible from outside the network. It is on a separate private network from the host and gets its IP from VMware’s DHCP server.
 - **Host-only**: The VM is isolated and can only communicate with the host and other VMs on the same network. This creates a VPN between the host and VM that is not visible outside of the host system. This is the most secure option for running purposefully vulnerable machines.
 
-There is much more detail to these settings and other possible settings as well. Please visit [VMware Documentation](https://docs.vmware.com/en/VMware-Workstation-Player-for-Windows/17.0/com.vmware.player.win.using.doc/GUID-C82DCB68-2EFA-460A-A765-37225883337D.html) to read more and do other research before you attempt setting up these machines.
+There is much more detail to these network adapter settings and other possible network adapter settings as well. Please visit [VMware Documentation](https://docs.vmware.com/en/VMware-Workstation-Player-for-Windows/17.0/com.vmware.player.win.using.doc/GUID-C82DCB68-2EFA-460A-A765-37225883337D.html) to read more and do other research before you attempt setting up these machines.
 
 We are using host-only adapters for the 3 machines we have previously mentioned. Except the Kali machine will also have an additional NAT network adapter in VMware so that it can access the internet to receive updates and packages. This internet access can be turned on/off in the VM so that it can be isolated for security and only connected to the internet when necessary.
 
@@ -145,5 +146,5 @@ We are using host-only adapters for the 3 machines we have previously mentioned.
 2. **Sound Card**: Can be left as Auto Detect.
 3. **Display**: Can be left as Auto Detect.
 
-Clicking OK will now create the VM. We will not cover the internal environments of the VMs themselves in this documentation.
+Clicking OK will now create the VM. We will not cover the internal environments of the VMs themselves in this section.
 

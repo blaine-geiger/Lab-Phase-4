@@ -1,8 +1,8 @@
-# Lab Phase 5: Ensure virtualization capability and install virtual machines
+# Lab Phase 5: Virtualization capability and installing VMs
 
 ## Research and Determine Ideal Virtualization Environment
 
-Two of the main offerings and competitors in the virtualization marketspace are **VirtualBox** and **VMware**. Let’s make a quick comparison of the two platforms.
+Two common offerings in the virtualization marketspace are **VirtualBox** and **VMware**. Let’s make a quick comparison of the two platforms.
 
 ### VirtualBox
 - Free and open source (Oracle)

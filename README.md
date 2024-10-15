@@ -100,14 +100,14 @@ At this point, we should be able to run a virtual environment in VMware because 
 
 Now we can download some virtual machines to install in our new lab.
 
-1. Go to [Kali Linux Download Page](https://www.kali.org/get-kali/#kali-virtual-machines)
+1. Go to [here to download a Kali VM](https://www.kali.org/get-kali/#kali-virtual-machines).
    - Find the VMware download link.
    - Click this link to download and unzip the file (7-zip).
-2. Go to [Metasploitable Download Page](https://information.rapid7.com/metasploitable-download.html).
-3. Or [Metasploitable on SourceForge](https://sourceforge.net/projects/metasploitable/)
+2. Browse [here to download Metaspoitable](https://information.rapid7.com/metasploitable-download.html).
+3. Or here at [SourceForge](https://sourceforge.net/projects/metasploitable/)
    - Downloading from sourceforge.net doesn’t require you to register.
-4. Go to [OWASP BWA Files on SourceForge](https://sourceforge.net/projects/owaspbwa/files/).
-5. Or [OWASP BWA on GitHub](https://github.com/chuckfw/owaspbwa)
+4. Go [here](https://sourceforge.net/projects/owaspbwa/files/) to get OWASP on SourceForge.
+5. Or [here](https://github.com/chuckfw/owaspbwa) to get it from GitHub instead. 
    - Download version 1.2 (last version 08/2015).
 6. Create a folder wherever you like, such as `Documents > Virtual Machines`.
 7. Create a folder for each machine inside the Virtual Machines folder, like so:

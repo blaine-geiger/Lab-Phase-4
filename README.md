@@ -1,4 +1,4 @@
-# Lab Phase 5: Virtualization capability and installing VMs
+# Lab Phase 4: Virtualization capability and installing VMs
 
 ## Research and Determine Ideal Virtualization Environment
 

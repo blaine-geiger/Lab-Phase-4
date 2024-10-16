@@ -20,7 +20,7 @@ VMware generally performs better, especially when running resource-intensive app
 
 VirtualBox is highly regarded for its ease of use with beginners and casual users. It is a cost-effective choice for learners and people who prefer open-source options with a large amount of community support. It is seen positively for its ease of setup and simplicity.
 
-I have personally used both and do not really have a strong preference. However, VirtualBox was the first VM software I learned to use. I already have experience with it, and I would like to learn how to use a different method of virtualization. Moving away from what you are comfortable with always presents an opportunity to learn something new. Although they are similar, methods of configuration and the available options will change slightly.
+I have personally used both and do not really have a strong preference. However, I have previous experience with Virtualbox and I would like to learn a new virtualizaion platform. Moving away from what you are comfortable with always presents an opportunity to learn something new. Although they are similar, some methods of configuration and available options may change slightly.
 
 - [VirtualBox Official Website](https://www.virtualbox.org/) 
 - [VMware Official Website](https://www.vmware.com/) 
@@ -29,12 +29,10 @@ I have personally used both and do not really have a strong preference. However,
 
 ## Download and Configure Virtualization Software
 
-First, let’s go download a few pieces of software. This is a new PC in this scenario, so we are going to need some software to accomplish some tasks. Here is a short list of sites. Use reputable sources for software, preferably the developer’s hosted main download source. I take no responsibility for what you download from the internet.
+First, let’s go download a few pieces of software. This is a new PC in this scenario, so we are going to need some software to accomplish our tasks. Here is a short list of sites. Use reputable sources for software, preferably the developer’s hosted main download source. I take no responsibility for what you download from the internet.
 
 - [VMware](https://www.vmware.com/) (This is kind of rough since Broadcom acquired VMware; the shift of where the download is located, and the process can be problematic. To be honest, the site design and UI are not friendly or easy to navigate)
 - [7-zip](https://www.7-zip.org/) 
-- [HWinfo](https://www.hwinfo.com/download/) (system information)
-- [CPU-Z](https://www.cpuid.com/softwares/cpu-z.htm) (system information)
 - [HWmonitor](https://www.cpuid.com/softwares/hwmonitor.html) (live system stats, like temps, utilization, voltages, and speeds for CPU, GPU, RAM, etc.)
 
 Now, we need to make sure to enable some PC settings that will allow virtualization. This will be different for some users, depending on hardware, software, and especially which company manufactured your computer’s CPU. In my case that is AMD (not Intel). If you are not sure which manufacturer made your CPU, there are many ways to check. A quick and easy method is to do the following:
@@ -48,7 +46,7 @@ Now, we need to make sure to enable some PC settings that will allow virtualizat
 
 Moving on, we are using an AMD processor, and I want to use the virtualization features of the AMD chip (called **AMD-V**). This will provide hardware-level support for our VMs, making them faster and more efficient than using the Windows software-based virtualization. So, we are going to make sure that AMD-V is enabled and that Windows Hyper-V is disabled.
 
-We are going to need to enter our BIOS. If you have never done this, it may seem intimidating. Do not worry, you can change all kinds of settings, and it won’t matter as long as you don’t choose **Save & Exit**. If you get scared, you can always just choose **Exit without Saving** and none of the changes will take place.
+We are going to need to enter our BIOS. If you have never done this, it may seem intimidating. Do not worry, you can change all kinds of settings, and it won’t matter as long as you don’t choose **Save & Exit**. If you are concerned, you can always just choose **Exit without Saving** and none of the changes will take place.
 
 ### Access BIOS/UEFI via Windows Settings
 1. Click on the Start Menu and select **Settings** (gear icon).
@@ -86,10 +84,6 @@ This is where the HWmonitor program we downloaded earlier will come in handy. Us
    - You would need to reboot after trying each one of these as well, meaning… 
      - try one command, reboot, and attempt virtualization; if an error is given,
      - try the other command, reboot, and attempt virtualization again.
-
-We can check our settings with CPU-Z, which we downloaded earlier.
-1. Install CPU-Z and run the program.
-2. Look for **AMD-V** in green print; this means it is enabled.
 
 At this point, we should be able to run a virtual environment in VMware because we enabled AMD-V (and NX) in BIOS and disabled Hyper-V in Windows.
 1. Install VMware from your download.
@@ -138,7 +132,7 @@ There are many ways to perform this task. In this document, we will cover a simp
 - **NAT**: The VM shares the host IP and MAC of the host system (your PC) and is behind a virtual router. The VM can access the internet but is not accessible from outside the network. It is on a separate private network from the host and gets its IP from VMware’s DHCP server.
 - **Host-only**: The VM is isolated and can only communicate with the host and other VMs on the same network. This creates a VPN between the host and VM that is not visible outside of the host system. This is the most secure option for running purposefully vulnerable machines.
 
-There is much more detail to these network adapter settings and other possible network adapter settings as well. Please visit [VMware Documentation](https://docs.vmware.com/en/VMware-Workstation-Player-for-Windows/17.0/com.vmware.player.win.using.doc/GUID-C82DCB68-2EFA-460A-A765-37225883337D.html) to read more and do other research before you attempt setting up these machines.
+There is much more detail to these network adapter settings and other possible network adapter settings as well. Please visit [this site](https://docs.vmware.com/en/VMware-Workstation-Player-for-Windows/17.0/com.vmware.player.win.using.doc/GUID-C82DCB68-2EFA-460A-A765-37225883337D.html) for the VMware documentation to read more detail. You may need to do additional research before you attempt to set up these machines.
 
 We are using host-only adapters for the 3 machines we have previously mentioned. Except the Kali machine will also have an additional NAT network adapter in VMware so that it can access the internet to receive updates and packages. This internet access can be turned on/off in the VM so that it can be isolated for security and only connected to the internet when necessary.
 
